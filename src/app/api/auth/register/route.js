@@ -5,6 +5,7 @@ import path from "path";
 import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
+const SECRET_KEY = process.env.NEXTAUTH_SECRET || "your_secret_key";
 const uploadDir = path.join(process.cwd(), "public/image");
 
 export async function POST(req) {
